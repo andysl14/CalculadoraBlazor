@@ -1,16 +1,65 @@
 ﻿@page "/counter"
 
-<h1>Counter</h1>
+<h1>Calculadora Demo</h1>
 
-<p>Current count: @currentCount</p>
+<div>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Primer Numero</p>
+        </div>
+        <div class="col-md-4">
+            <input placeholder="Digite Primer Numero" @bind="num1" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <p>Segundo Numero</p>
+        </div>
+        <div class="col-md-4">
+            <input placeholder="Digite Segundo Numero" @bind="num2" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <p>Resultado</p>
+        </div>
+        <div class="col-md-4">
+            <input readonly @bind="FinalResult" />
+        </div>
+    </div>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <button @onclick="Suma" class="btn btn-primary"> Sumar (+)</button>
+        </div>
+        <div class="col-md-2">
+            <button @onclick="Resta" class="btn btn-primary"> Restar (−)</button>
+        </div>
+        <div class="col-md-2">
+            <button @onclick="Multiplicacion" class="btn btn-primary "> Multiplicar (X)</button>
+        </div>
+    </div>
+</div>
 
 @code {
-    private int currentCount = 0;
+    string num1;
+    string num2;
+    string FinalResult;
 
-    private void IncrementCount()
+    public void Suma()
     {
-        currentCount++;
+        FinalResult = (Convert.ToDouble(num1) + Convert.ToDouble(num2)).ToString();
+    }
+    public void Resta()
+    {
+        FinalResult = (Convert.ToDouble(num1) - Convert.ToDouble(num2)).ToString();
+    }
+    public void Multiplicacion()
+    {
+        FinalResult = (Convert.ToDouble(num1) * Convert.ToDouble(num2)).ToString();
     }
 }
