@@ -46,20 +46,20 @@
 </div>
 
 @code {
-    string num1;
-    string num2;
-    string FinalResult;
+    float num1;
+    float num2;
+    float FinalResult;
 
     public void Suma()
     {
-        FinalResult = (Convert.ToDouble(num1) + Convert.ToDouble(num2)).ToString();
+        FinalResult = num1 + num2;
     }
     public void Resta()
     {
-        FinalResult = (Convert.ToDouble(num1) - Convert.ToDouble(num2)).ToString();
+        FinalResult = num1 - num2;
     }
     public void Multiplicacion()
     {
-        FinalResult = (Convert.ToDouble(num1) * Convert.ToDouble(num2)).ToString();
+        FinalResult = num1 * num2;
     }
 }
